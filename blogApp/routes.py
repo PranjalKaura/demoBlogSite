@@ -1,8 +1,9 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegisterationForm, LoginForm
+from blogApp.models import User, Post
+from blogApp.forms import RegisterationForm, LoginForm
+from blogApp import app
+from flask import render_template, url_for, flash, redirect
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = '6429c683fb2dfc3cba98c220bc354a94'
+
 
 posts = [
     {
@@ -46,8 +47,3 @@ def login():
         else:
             flash('Unsuccessful login!', 'danger')
     return render_template('login.html', title = 'Login', form=form)
-
-#this will only run when app.py is run directly using python.
-#it will not run if this file is imported in another module, because then __name__ is not __main__
-if __name__ == '__main__':
-    app.run(debug = True)
