@@ -1,7 +1,7 @@
 from blogApp.models import User, Post
 from blogApp.users.forms import (RegisterationForm, LoginForm, UpdateAccountForm, 
                            RequestResetForm, ResetPasswordForm)
-from blogApp import app, db, bcrypt
+from blogApp import db, bcrypt
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, logout_user, current_user, login_required
 from blogApp.users.utils import sendResetEmail, savePicture
