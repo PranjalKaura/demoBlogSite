@@ -33,9 +33,11 @@ def createApp(configClass = Config):
     from blogApp.users.routes import users
     from blogApp.posts.routes import posts
     from blogApp.main.routes import main
+    from blogApp.errors.handlers import errors
 
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app

@@ -29,4 +29,4 @@ def sendResetEmail(user):
 
     If you did not make this request, please ignore this message.
     '''
-    mail.send(msg)
+    # mail.send(msg)
